@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pertemuan 6 - latihan 1</title>
+    <style>
+        body {
+
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .kotak1 {
+            background-color: lightblue;
+            z-index: 1;
+        }
+        .kotak2 {
+            background-color: lightgreen;
+            position: fixed;
+            top: 50px;      
+            left: 150px;
+
+        }
+        .kotak3 {
+            background-color: lightpink;
+        }
+        .pembungkus {
+            width: 300px;
+            height: 300px;
+            border: 8px solid black;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pembungkus">
+        <div class="kotak1">1</div>
+        <div class="kotak2">2</div>
+        <div class="kotak3">3</div>
+    </div>
+</body>
+</html>
