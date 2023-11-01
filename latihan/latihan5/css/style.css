@@ -7,19 +7,20 @@
 /* style utama */
 body {
     font: 18px/36px 'BebasNeue', 'Arial Narrow', arial, sans-serif;
-    background-color: #ddd;
+    background-image: url(../img/background.jpg);
 }
 
 h1 {
     font-size: 80px;
     margin: 50px 0;
     text-align: center;
-    text-shadow: 1px 1px 1px white;
+    color: cadetblue;
+    text-shadow: 1px 3px 3px white;
 }
 
 .container {
-    width: 600px;
-    background-color: white;
+    width: 900px;
+    background-color: lightgoldenrodyellow;
     margin: auto;
     padding: 30px;
     box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
@@ -30,9 +31,10 @@ h1 {
     width: 120px;
     height: 120px;
     /* overflow: hidden; */
-    border: 5px solid #666;
+    border: 5px solid ;
     float: left;
     margin-right: 20px;
+    margin-bottom: 15px;
     position: relative;
 }
 
@@ -95,14 +97,14 @@ h1 {
 }
 
 .overlay:target img {
-    animation: zoomDanFade 1s;
+    animation: FadeAjah 1s;
 }
 
 .overlay .close {
     position: absolute;
     top: 50px;
     left: 50%;
-    margin-left: -27px;
+    margin-left: -35px;
     color: white;
     text-decoration: none;
     background-color: black;
@@ -116,6 +118,11 @@ h1 {
     animation: slideDownFade .5s .5s forwards;
 }
 
+.overlay:target .next,
+.overlay:target .prev {
+    animation: FadeAjah .5s .5s forwards;
+}
+
 /* navigasi */
 .next {
     width: 50px;
@@ -124,9 +131,30 @@ h1 {
     text-indent: -9999px;
     top: 45%;
     margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    width: 50px;
+    height: 50px;background-image: url(../img/prev.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 45%;
+    margin-left: -100px;
+    opacity: 0;
 }
 
 /* animasi */
+@keyframes FadeAjah {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes zoomDanFade {
     0% {
         transform: scale(0);
