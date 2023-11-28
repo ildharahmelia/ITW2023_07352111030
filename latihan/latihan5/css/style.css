@@ -18,6 +18,12 @@ h1 {
     text-shadow: 1px 3px 3px white;
 }
 
+.kalimat {
+    text-align: center;
+    color: #444444;
+    margin-bottom: 40px;
+}
+
 .container {
     width: 900px;
     background-color: lightgoldenrodyellow;
