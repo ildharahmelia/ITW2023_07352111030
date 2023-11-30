@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    background-color: #f3d971;
+    justify-content: space-between;
+    padding: 15px 0;
+    color: black;
+}
+
+nav .logo {
+    margin-left: 20px;
+    font-family: 'Lobster', sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+nav ul {
+    display: flex;
+    width: 30%;
+    list-style: none;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+nav ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: rgb(245, 242, 248);
+    background-color: black;
+    transition: 0.2s;
+}
+
+/* hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.5s;
+    margin-right: 15px;
+}
+
+/* hahmburger menu animation */
+
+.menu-toggle span:nth-child(2) {
+    /* background-color: black; */
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    /* background-color: black; */
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: black;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: black;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0)
+}
+
+
+
+/* responsive */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+
+/* ukuran mobile */
+@media screen and (max-width: 568px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 150px;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f3d971;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
